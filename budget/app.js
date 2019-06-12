@@ -15,11 +15,9 @@ var budgetController = (function() {
         this.value = value; 
     };
 
-
-
-
-
 })(); 
+
+
 // UI CONTROLLER
 var UIController = (function(){ 
 
