@@ -280,13 +280,17 @@ var UIController = (function(){
             }); 
         }, 
 
-        displayMonth: function() { 
-            var now, year, month; 
+        displayYear: function() { 
+            var now, month, year;  
 
             now = new Date();  
+
+            months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']; 
+            month = now.getMonth(); 
+
             year = now.getFullYear(); 
 
-            document.querySelector(DOMstrings.dateLabel).textContent = year; 
+            document.querySelector(DOMstrings.dateLabel).textContent = months[month] + ' ' +  year; 
         },
 
         getDOMstrings: function() { 
@@ -385,7 +389,7 @@ var controller = (function(budgetCtrl, UICtrl){
         init: function() { 
             console.log("App started."); 
 
-            UICtrl.displayMonth(); 
+            UICtrl.displayYear(); 
 
             //when we reload everything will set to '0'
             UICtrl.displayBudget( {
